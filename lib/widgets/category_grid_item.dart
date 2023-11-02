@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealapp2/models/category.dart';
-//nakkul
+
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({
     super.key,
