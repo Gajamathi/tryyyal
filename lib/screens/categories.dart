@@ -4,7 +4,6 @@ import 'package:mealapp2/screens/meall.dart';
 import 'package:mealapp2/widgets/category_grid_item.dart';
 import 'package:mealapp2/models/category.dart';
 
-
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
   void _selectCategory(
