@@ -27,14 +27,6 @@ class MealsScreen extends StatelessWidget {
                     )),
           ],
         ),
-<<<<<<< HEAD
-      ); 
-    if (meal.isNotEmpty) {
-      content = ListView.builder(
-     itemCount: meal.length,
-      itemBuilder: (context, index) => MealIteam(meal: meal[index]),
-    );
-=======
       ),]
       else...[
         Expanded(
@@ -45,7 +37,6 @@ class MealsScreen extends StatelessWidget {
         )
       ]
     ]);
->>>>>>> d2c8c7554d029f3eb0cb9ac385c0c3042256163c
 
     return Scaffold(
         appBar: AppBar(
