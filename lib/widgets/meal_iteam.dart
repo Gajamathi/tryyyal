@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mealapp2/models/meals.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:mealapp2/widgets/meal_item_trait.dart';
 class MealIteam extends StatelessWidget{
   const MealIteam({super.key,required this.meal});
   final Meal meal;
+  String get ComplexityText {
+    return meal.complexity.name[0].toLowerCase() +
+        meal.complexity.name.substring(1);
+  }
+String get AffordabilityText {
+    return meal.affordability.name[0].toLowerCase() +
+        meal.affordability.name.substring(1);
+  }
+
   @override
   Widget build(BuildContext context) {
     
@@ -19,7 +29,7 @@ class MealIteam extends StatelessWidget{
           FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
             image: NetworkImage(meal.imageUrl),
-            fit:BoxFit.cover ,
+            fit:BoxFit.fill ,
             height: 200,
           ),
           Positioned(
@@ -43,9 +53,31 @@ class MealIteam extends StatelessWidget{
                           color: Colors.white),
                     ),
                     const SizedBox(height: 12),
-                   const Row(children: [],),
-                    
-                  ],),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          MealItemTrait(
+                            icon: Icons.schedule,
+                            label: '${meal.duration} min',
+                          ),
+                          const SizedBox(
+                            width: 12,),
+                          
+                          MealItemTrait(
+                            icon: Icons.work,
+                            label: ComplexityText ,
+                          ),
+                          const SizedBox(
+                            width: 12,),
+                          
+                          MealItemTrait(
+                            icon: Icons.attach_money,
+                            label: AffordabilityText ,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               )
         ],

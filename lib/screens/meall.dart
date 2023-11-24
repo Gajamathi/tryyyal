@@ -32,7 +32,7 @@ class MealsScreen extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: meal.length,
-            itemBuilder: (context, index) => Text(meal[index].title),
+            itemBuilder: (context, index) => MealIteam(meal:meal [index]),
           ),
         )
       ]
