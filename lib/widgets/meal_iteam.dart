@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mealapp2/models/meals.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:mealapp2/widgets/meal_item_trait.dart';
-class MealIteam extends StatelessWidget{
-  const MealIteam({super.key,required this.meal});
+class MealIteam extends StatelessWidget {
+  const MealIteam({super.key, required this.meal,required this.onSelectMeal});
   final Meal meal;
+  final void Function(Meal meal) onSelectMeal;
   String get ComplexityText {
     return meal.complexity.name[0].toLowerCase() +
         meal.complexity.name.substring(1);
   }
-String get AffordabilityText {
+
+  String get AffordabilityText {
     return meal.affordability.name[0].toLowerCase() +
         meal.affordability.name.substring(1);
   }
@@ -23,12 +25,13 @@ String get AffordabilityText {
       clipBehavior: Clip.hardEdge,
       elevation:2 ,
       child: InkWell(
-    onTap:(){},
+    onTap:(){onSelectMeal(meal);},
     child: Stack(
         children: [
           FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
             image: NetworkImage(meal.imageUrl),
+            width: double.infinity,
             fit:BoxFit.fill ,
             height: 200,
           ),
