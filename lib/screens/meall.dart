@@ -12,7 +12,7 @@ class MealsScreen extends StatelessWidget {
   const MealsScreen({super.key, required this.title, required this.meal});
   final String title;
   final List<Meal> meal;
-  void selectMeal(Meal meal){
+  void selectMeal(BuildContext context,Meal meal){
     Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>MealDetailsScreen(meal: meal)));
   }
 
@@ -40,7 +40,10 @@ class MealsScreen extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: meal.length,
-            itemBuilder: (context, index) => MealIteam(meal:meal [index],onSelectMeal: selectMeal,),
+            itemBuilder: (buicontext, index) => MealIteam(meal:meal [index],onSelectMeal:(meal) {
+            selectMeal(context, meal)  ;
+
+            }),
           ),
         )
       ]

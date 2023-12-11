@@ -5,7 +5,7 @@ import 'package:mealapp2/widgets/meal_item_trait.dart';
 class MealIteam extends StatelessWidget {
   const MealIteam({super.key, required this.meal,required this.onSelectMeal});
   final Meal meal;
-  final void Function(Meal meal) onSelectMeal;
+  final void Function( BuildContext context,Meal meal) onSelectMeal;
   String get ComplexityText {
     return meal.complexity.name[0].toLowerCase() +
         meal.complexity.name.substring(1);
@@ -25,7 +25,7 @@ class MealIteam extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation:2 ,
       child: InkWell(
-    onTap:(){onSelectMeal(meal);},
+    onTap:(){onSelectMeal( Meal);},
     child: Stack(
         children: [
           FadeInImage(
