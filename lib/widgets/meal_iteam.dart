@@ -25,7 +25,7 @@ class MealIteam extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation:2 ,
       child: InkWell(
-    onTap:(){onSelectMeal( Meal);},
+    onTap:(){onSelectMeal(meal , Meal);},
     child: Stack(
         children: [
           FadeInImage(
