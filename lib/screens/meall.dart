@@ -38,19 +38,21 @@ class MealsScreen extends StatelessWidget {
         ),
       ),]
       else...[
-        Expanded(
-          content ListView.builder(
+         Expanded(
+         child:  ListView.builder(
             itemCount: meal.length,
             itemBuilder: (buicontext, index) => MealIteam(meal:meal [index],onSelectMeal:(meal) {
               selectMeal(context, meal)
-            },),
+            
       
-
+            }
             ),
-          ),
+          ),),
+    
         
-      ]
-    ]);
+        
+      ],]);
+    
 
     return Scaffold(
         appBar: AppBar(
