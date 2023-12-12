@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:mealapp2/models/meals.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:mealapp2/widgets/meal_item_trait.dart';
+import 'package:mealapp2/screens/meall.dart';
 class MealIteam extends StatelessWidget {
   const MealIteam({super.key, required this.meal,required this.onSelectMeal});
   final Meal meal;
   final void Function( BuildContext context,Meal meal) onSelectMeal;
-  String get ComplexityText {
+  String get complexityText {
     return meal.complexity.name[0].toLowerCase() +
         meal.complexity.name.substring(1);
   }
 
-  String get AffordabilityText {
+  String get affordabilityText {
     return meal.affordability.name[0].toLowerCase() +
         meal.affordability.name.substring(1);
   }
@@ -25,7 +26,9 @@ class MealIteam extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation:2 ,
       child: InkWell(
-    onTap:(){onSelectMeal(meal , Meal);},
+    onTap:(){
+      onSelectMeal(meal);
+    },
     child: Stack(
         children: [
           FadeInImage(
@@ -68,14 +71,14 @@ class MealIteam extends StatelessWidget {
                           
                           MealItemTrait(
                             icon: Icons.work,
-                            label: ComplexityText ,
+                            label: complexityText ,
                           ),
                           const SizedBox(
                             width: 12,),
                           
                           MealItemTrait(
                             icon: Icons.attach_money,
-                            label: AffordabilityText ,
+                            label: affordabilityText ,
                           )
                         ],
                       ),

@@ -13,7 +13,8 @@ class MealsScreen extends StatelessWidget {
   final String title;
   final List<Meal> meal;
   void selectMeal(BuildContext context,Meal meal){
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>MealDetailsScreen(meal: meal)));
+    Navigator.of(context).push(MaterialPageRoute
+    (builder: (ctx)=>MealDetailsScreen(meal: meal)));
   }
 
   @override
@@ -38,14 +39,16 @@ class MealsScreen extends StatelessWidget {
       ),]
       else...[
         Expanded(
-          child: ListView.builder(
+          content ListView.builder(
             itemCount: meal.length,
             itemBuilder: (buicontext, index) => MealIteam(meal:meal [index],onSelectMeal:(meal) {
-            OnselectMeal(context, meal)  ;
+              selectMeal(context, meal)
+            },),
+      
 
-            }),
+            ),
           ),
-        )
+        
       ]
     ]);
 
