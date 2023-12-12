@@ -27,7 +27,7 @@ class MealIteam extends StatelessWidget {
       elevation:2 ,
       child: InkWell(
     onTap:(){
-      onSelectMeal(meal);
+      onSelectMeal(context ,meal);
     },
     child: Stack(
         children: [
