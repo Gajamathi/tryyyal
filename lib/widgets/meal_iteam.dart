@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mealapp2/models/meals.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:mealapp2/widgets/meal_item_trait.dart';
-import 'package:mealapp2/screens/meall.dart';
+
 class MealIteam extends StatelessWidget {
   const MealIteam({super.key, required this.meal,required this.onSelectMeal});
   final Meal meal;
   final void Function( BuildContext context,Meal meal) onSelectMeal;
   String get complexityText {
-    return meal.complexity.name[0].toLowerCase() +
+    return meal.complexity.name[0].toUpperCase() +
         meal.complexity.name.substring(1);
   }
 
@@ -27,7 +27,7 @@ class MealIteam extends StatelessWidget {
       elevation:2 ,
       child: InkWell(
     onTap:(){
-      onSelectMeal(context ,meal);
+      onSelectMeal(meal);
     },
     child: Stack(
         children: [
