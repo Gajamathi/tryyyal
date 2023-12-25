@@ -6,7 +6,7 @@ import 'package:mealapp2/widgets/meal_item_trait.dart';
 class MealIteam extends StatelessWidget {
   const MealIteam({super.key, required this.meal,required this.onSelectMeal});
   final Meal meal;
-  final void Function( BuildContext context,Meal meal) onSelectMeal;
+  final  Function( BuildContext context,Meal meal) onSelectMeal;
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +
         meal.complexity.name.substring(1);
